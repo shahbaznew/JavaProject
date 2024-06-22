@@ -60,6 +60,12 @@ public class ConnectFour {
         logger.error("Column is full");
         return false; 
     }
+    private boolean checkWinner(int lastRow, int lastCol) { 
+        return checkLine(lastRow, lastCol, 0, 1) ||
+        return checkLine(lastRow, lastCol, 1, 0) ||
+        return checkLine(lastRow, lastCol, 1, 1) ||
+        return checkLine(lastRow, lastCol, 1, -1);
+    }
 
 
 
