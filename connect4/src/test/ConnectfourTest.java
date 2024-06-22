@@ -16,4 +16,16 @@ public class ConnectfourTest {
         boolean winner = game.addToken(3); 
         assertTrue("Expected horizontal win", winner); 
     }
+    @Test 
+    public void testVerticalWin() { 
+        ConnectFour game = new ConnectFour(6, 7, 4); 
+        game.addToken(0);
+        game.addToken(1);
+        game.addToken(0);
+        game.addToken(1);
+        game.addToken(0);
+        game.addToken(1);
+        boolean winner = game.addToken(0); 
+        assertTrue("Expected horizontal win", winner); 
+    }
 }
