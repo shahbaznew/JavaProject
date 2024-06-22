@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ConnectFour { 
-    private static final Logger logger  = LoggerFactory.getLogger(ConnectFour.class)
+    private static final Logger logger  = LoggerFactory.getLogger(ConnectFour.class);
     private final int rows; 
     private final int cols; 
     private final int winLength; 
@@ -112,21 +112,11 @@ public class ConnectFour {
         }
         scanner.close();
     }
-    private static String repeat(String)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    private static String repeat(String str, int times) { 
+        StringBuilder repeated = new StringBuilder(); 
+        for (int i =0; i < times; i++) { 
+            repeated.append(str);
+        }
+        return repeated.toString();
+    }
 }
