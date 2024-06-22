@@ -45,6 +45,20 @@ public class ConnectFour {
             logger.error("invalid column"); 
             return false;
         }
+        for (int row = rows - 1; row >= 0; row --){ 
+            if(grid[row][col] == ' ') { 
+                grid[row][col] = currentPlayer; 
+                if(checkWinner(row, col)) { 
+                    displayGrid();
+                    logger.info("{} wins!", currentPlayer == 'R' ? "Red" : "Yellow"); 
+                    return true;
+                }
+                currentPlayer = (currentPlayer == 'R') ? 'Y' : 'R';
+                return true; 
+            }
+        }
+        logger.error("Column is full");
+        return false; 
     }
 
 
