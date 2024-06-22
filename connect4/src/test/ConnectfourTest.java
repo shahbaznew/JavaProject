@@ -60,4 +60,11 @@ public class ConnectfourTest {
         boolean winner = game.addToken(0); 
         assertTrue("Expected Diagonal win", winner); 
     }
+    @Test 
+    public void testInvalidColumn() { 
+        ConnectFour game = new ConnectFour(6, 7, 4); 
+        assertFalse("Expected invalid column", game.addToken(-1)); 
+        assertFalse("Expected invalid column", game.addToken(7)); 
+        
+    }
 }
