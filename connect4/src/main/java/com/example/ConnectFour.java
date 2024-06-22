@@ -62,9 +62,26 @@ public class ConnectFour {
     }
     private boolean checkWinner(int lastRow, int lastCol) { 
         return checkLine(lastRow, lastCol, 0, 1) ||
-        return checkLine(lastRow, lastCol, 1, 0) ||
-        return checkLine(lastRow, lastCol, 1, 1) ||
-        return checkLine(lastRow, lastCol, 1, -1);
+                checkLine(lastRow, lastCol, 1, 0) ||
+                checkLine(lastRow, lastCol, 1, 1) ||
+                checkLine(lastRow, lastCol, 1, -1);
+    }
+    private boolean checkLine(int startRow, int startCol, int dRow, int dCol) { 
+        int count = 0;
+        char token = grid[startRow][startCol]; 
+        for (int i = -winLength + 1; i < winLength; i++) { 
+            int row = startRow + i * dRow; 
+            int col = startCol + i * dCol; 
+            if(row >= 0 && row < rows && col >= 0 && col < cols && grid[row][col] == token) { 
+                count++; 
+                if(count == winLength) { 
+                    return true; 
+                }
+            }else { 
+                count = 0; 
+            }
+        }
+        return false; 
     }
 
 
