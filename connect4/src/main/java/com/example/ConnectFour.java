@@ -83,6 +83,24 @@ public class ConnectFour {
         }
         return false; 
     }
+    public static void main(String[] args) { 
+        Scanner scanner = new Scanner(System.in); 
+
+        logger.info("Welcome to Connect Four"); 
+        logger.info("Etner number of rows you would like:"); 
+        int rows = scanner.nextInt(); 
+        logger.info("Etner number of columns you would like:"); 
+        int cols = scanner.nextInt(); 
+        logger.info("Enter winning row length:"); 
+        int winLength = scanner.nextInt(); 
+
+        ConnectFour game = new ConnectFour(rows, cols, winLength); 
+        game.displayGrid();
+
+        boolean winner = false; 
+        
+
+    }
 
 
 
