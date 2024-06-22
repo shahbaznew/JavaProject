@@ -40,5 +40,27 @@ public class ConnectFour {
         }
         logger.info(colNumbers.toString());
     }
+    public boolean addToken(int col) { 
+        if (col < 0 || col >= cols) { 
+            logger.error("invalid column"); 
+            return false;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
