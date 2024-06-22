@@ -106,11 +106,13 @@ public class ConnectFour {
                 if(game.checkWinner(game.rows - 1, col)) { 
                     winner = true; 
                 }
+            } else { 
+                logger.info("Try Again.");
             }
         }
-
+        scanner.close();
     }
-
+    private static String repeat(String)
 
 
 
