@@ -98,7 +98,16 @@ public class ConnectFour {
         game.displayGrid();
 
         boolean winner = false; 
-        
+        while(!winner) { 
+            logger.info("{}'s turn, Choose a column:", game.currentPlayer == 'R' ? "Red" : "Yellow"); 
+            int col = scanner.nextInt(); 
+            if(game.addToken(col)) { 
+                game.displayGrid();
+                if(game.checkWinner(game.rows - 1, col)) { 
+                    winner = true; 
+                }
+            }
+        }
 
     }
 
