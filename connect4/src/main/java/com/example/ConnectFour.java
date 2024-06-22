@@ -24,5 +24,21 @@ public class ConnectFour {
             }
         }
     }
+    public void displayGrid() { 
+        for (char[] row : grid) { 
+            StringBuilder rowDisplay = new StringBuilder("|"); 
+            for (char cell : row) { 
+                rowDisplay.append(cell).append("|"); 
+
+            }
+            logger.info(rowDisplay.toString());
+        } 
+        logger.info(repeat("-", cols * 2 + 1));
+        StringBuilder colNumbers = new StringBuilder(); 
+        for (int i = 0; i < cols; i++) { 
+            colNumbers.append(i).append(" "); 
+        }
+        logger.info(colNumbers.toString());
+    }
 
 }
