@@ -67,4 +67,12 @@ public class ConnectfourTest {
         assertFalse("Expected invalid column", game.addToken(7)); 
         
     }
+    @Test 
+    public void testFullColumn() { 
+        ConnectFour game = new Connectfour(6, 7, 4); 
+        for (int i =0; i < 6; i++ ){ 
+            game.addToken(0);
+        }
+        assertFalse("Expected full column", game.addToken(0)); 
+    }
 }
